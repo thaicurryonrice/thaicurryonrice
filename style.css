@@ -1,0 +1,117 @@
+/* Body and global styles */
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+  padding: 10px;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: clamp(400px, 100vh, 700px);
+  background-image: url("images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* move content up */
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding-top: 5%; /* space from top */
+}
+
+/* Logo */
+.hero-logo {
+  width: clamp(150px, 40vw, 350px); /* responsive scaling */
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 1rem;
+  margin-top: -80px; /* nudged up more */
+}
+
+/* Hero text */
+.hero h1 {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 1000;
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: #ffffff;
+  -webkit-text-stroke: 1px black;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Buttons */
+.hero-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  max-width: 600px;
+}
+
+.hero-btn {
+  padding: 0.75rem 1.5rem;
+  background: #cf3939;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.hero-btn:hover {
+  background: #b71c1c;
+  transform: scale(1.05);
+}
+
+/* Desktop adjustments */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1.25rem;
+  }
+  .hero-logo {
+    width: 350px;
+    margin-top: -80px; /* desktop final nudge */
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .hero-logo {
+    margin-top: -60px; /* mobile final nudge */
+  }
+  .hero-buttons {
+    flex-direction: column; /* stack buttons */
+    gap: 1rem;
+    align-items: center;
+  }
+}
